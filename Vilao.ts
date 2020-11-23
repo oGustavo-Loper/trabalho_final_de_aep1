@@ -1,5 +1,5 @@
-import { Sla } from './sla'
-export default class Vilao extends Sla{
+import { Dados_dos_jogadores } from './dados_dos_jogadores'
+export default class Vilao extends Dados_dos_jogadores{
     constructor(nome: string, forca: number, vida: number, ataque: number, defesa: number, fome: number){
         super(nome, forca, vida, ataque, defesa, fome);
     }
@@ -51,7 +51,8 @@ export default class Vilao extends Sla{
         ("\nForça..: " + this.forca.toFixed(1)) + 
         ("\nVida...: " + this.vida.toFixed(1)) +
         ("\nAtaque.: " + this.ataque.toFixed(1)) + 
-        ("\nDefesa.: " + this.defesa.toFixed(1))
+        ("\nDefesa.: " + this.defesa.toFixed(1)) +
+        ("\nFome...: " + this.fome.toFixed(1))
         );
     }
 }
