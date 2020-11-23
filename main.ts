@@ -3,12 +3,9 @@ import Vilao from "./Vilao";
 import Batalha from "./Batalha";
 import prompt from "prompt-sync";
 
-// let person: Personagem = new Personagem("Gustavo", 100, 50, 50, 50);
-
 let teclado = prompt();
 let char1 : Heroi = new Heroi(teclado(`Qual nome do Heroi? `), 100,50,50,50,100);
 let char2 : Vilao = new Vilao("Baitimaum",  50 + Math.floor(Math.random() * 50), 50 + Math.floor(Math.random() * 50), 50 + Math.floor(Math.random() * 50), 50 + Math.floor(Math.random() * 50),  50 + Math.floor(Math.random() * 50));
-// let char3 : Batalha = const name = new type(arguments); Batalha(Heroi, Vilao);
 const char3 : Batalha = new Batalha(char1, char2);
 let option: number = 0;
 
@@ -20,7 +17,6 @@ while(option != 9){
     console.log(`| 4. Treinar Defesa               |`);
     console.log(`| 5. Batalhar                     |`);
     console.log(`| 6. A MIMIR                      |`);
-    console.log(`| 7. Tomar Porção                 |`);
     console.log(`| 9. Sair                         |`);
     console.log(`*=================================*`);
 
@@ -58,10 +54,6 @@ while(option != 9){
             console.clear()
             console.log(char1.dados_heroi());
             char1.a_mimir();
-        break;
-        case 7:
-            console.clear()
-            console.log("Colocar algo aqui");
         break;
         case 9:
             break;
