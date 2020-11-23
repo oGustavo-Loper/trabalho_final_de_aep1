@@ -1,27 +1,18 @@
 import Heroi from "./Heroi";
 import Vilao from "./Vilao";
 
-// export {Batalha};
-
-// let char1: Heroi;
-// let char2: Vilao;
 export default class Batalha {
     constructor(
         public heroi: Heroi,
         public vilao: Vilao,
     ){}
-// export default class Batalha{
-//     constructor(public char1 = Heroi, public char2 = Vilao){
-//         this.char1 = Heroi
-//         this.char2 = Vilao
-//     }
     public luta():void{
         console.log(`${this.heroi.nome} vs ${this.vilao.nome}`);
-        console.log(`Força.: ${this.heroi.forca} vs ${this.vilao.forca}`);
-        console.log(`Vida..: ${this.heroi.vida} vs ${this.vilao.vida}`);
-        console.log(`Ataque: ${this.heroi.ataque} vs ${this.vilao.ataque}`);
-        console.log(`Defesa: ${this.heroi.defesa} vs ${this.vilao.defesa}`);
-        console.log(`Fome..: ${this.heroi.fome} vs ${this.vilao.fome}`);
+        console.log(`Força.: ${this.heroi.forca.toFixed(1)} vs ${this.vilao.forca.toFixed(1)}`);
+        console.log(`Vida..: ${this.heroi.vida.toFixed(1)} vs ${this.vilao.vida.toFixed(1)}`);
+        console.log(`Ataque: ${this.heroi.ataque.toFixed(1)} vs ${this.vilao.ataque.toFixed(1)}`);
+        console.log(`Defesa: ${this.heroi.defesa.toFixed(1)} vs ${this.vilao.defesa.toFixed(1)}`);
+        console.log(`Fome..: ${this.heroi.fome.toFixed(1)} vs ${this.vilao.fome.toFixed(1)}`);
         
         let vezes = 0;
         if(this.heroi.vida > this.vilao.vida){
