@@ -1,5 +1,5 @@
-import { Sla } from './sla'
-export default class Heroi extends Sla{
+import { Dados_dos_jogadores } from './dados_dos_jogadores'
+export default class Heroi extends Dados_dos_jogadores{
     constructor(nome: string, forca: number, vida: number, ataque: number, defesa: number, fome: number){
         super(nome, forca, vida, ataque, defesa, fome);
     }
@@ -58,75 +58,75 @@ export default class Heroi extends Sla{
     }
 
     public treinar_forca(): void{
-        this.Forca += this.random(5);
-        this.Vida -= this.random(2);
-        this.Fome -= this.random(10);
-        if(this.fome < 5){
-            if(this.fome < 0){
-                this.Fome = 0;
+        this._forca += this.random(5);
+        this._vida -= this.random(2);
+        this._fome -= this.random(10);
+        if(this._fome < 5){
+            if(this._fome < 0){
+                this._fome = 0;
             }if(this.defesa > 100){
-                this.Defesa = 100;
-                return console.log("Minha defesa já esta top MEU!\n");
+                this._defesa = 100;
+                console.log("Minha defesa já esta top MEU!\n");
             }if(this.vida < 0){
-                this.Vida = 0;
-                return console.log("ESTOU MORTO OLHA MINHA VIDA \n");
+                this._vida = 0;
+                console.log("ESTOU MORTO OLHA MINHA VIDA \n");
             }
-            return console.log("Estou com fome\n");
+            console.log("Estou com fome\n");
         }
         if(this.forca >= 100){
-            this.Forca = 100;
+            this._forca = 100;
             console.log("Já estou bem treinado, vamos simbora pra batalha GOGOGO!\n");
         }
     }
     public treinar_ataque(): void{
-        this.Ataque += this.random(5);
-        this.Vida -= this.random(5);
-        this.Fome -= this.random(10);
+        this._ataque += this.random(5);
+        this._vida -= this.random(5);
+        this._fome -= this.random(10);
         if(this.ataque >= 100){
-            this.Ataque = 100;
-            return console.log("Estou bem Treinado de ataque\n");
+            this._ataque = 100;
+            console.log("Estou bem Treinado de ataque\n");
         } if(this.vida < 0){
-            this.Vida = 0;
-            return console.log("ESTOU MORTO OLHA MINHA VIDA \n");
+            this._vida = 0;
+            console.log("ESTOU MORTO OLHA MINHA VIDA \n");
         } if(this.fome < 5){
             if(this.fome < 0){
-                this.Fome = 0;
-                return console.log("Estou com fome, me alimente\n");
+                this._fome = 0;
+                console.log("Estou com fome, me alimente\n");
             }
         }
     }
     public treinar_defesa(): void{
-        this.Defesa += this.random(5);
-        this.Forca -= this.random(2);
-        this.Vida -= this.random(2);
-        this.Fome -= this.random(2);
+        this._defesa += this.random(5);
+        this._forca -= this.random(2);
+        this._vida -= this.random(2);
+        this._fome -= this.random(2);
         if(this.defesa > 100){
-            this.Defesa = 100;
-            return console.log("Estou treinado no maximo\n");
+            this._defesa = 100;
+            console.log("Estou treinado no maximo\n");
         } if(this.vida < 0){
-            this.Vida = 0;
-            return console.log("ESTOU MORTO OLHA MINHA VIDA \n");
+            this._vida = 0;
+            console.log("ESTOU MORTO OLHA MINHA VIDA \n");
         } if(this.fome < 5){
             if(this.fome < 0){
-                this.Fome = 0;
-                return console.log("Estou com fome, me alimente\n");
+                this._fome = 0;
+                console.log("Estou com fome, me alimente\n");
             }
         } if(this.forca < 10){
             if(this.forca <= 0){
-                this.Forca = 0;
-                return console.log("Estou morto, deixe eu dormir um pouco\n");
+                this._forca = 0;
+                console.log("Estou morto, deixe eu dormir um pouco\n");
             }
-            return console.log("Estou quase morrendo")
+            console.log("Estou quase morrendo")
         }
     }
 
     public a_mimir(): void{
         if(this.vida < 99){
-            this.Vida += this.random(50);
+            this._vida += this.random(50);
         }
         if(this.vida >= 100){
-            this.Vida = 100;
-            return console.log("Estou Bem descansadinho\n");
+            this._vida = 100;
+            console.log("Estou Bem descansadinho\n");
         }
     }
 
